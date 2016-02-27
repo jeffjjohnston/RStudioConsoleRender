@@ -1,0 +1,4 @@
+Name: Render in console
+Description: Renders the current RMarkdown document in the console
+Binding: renderInConsole
+Interactive: true
