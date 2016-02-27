@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Jeff Johnston <jjj@stowers.org>
 Maintainer: Jeff Johnston <jjj@stowers.org>
 Description: Provides an RStudio addin command to render the current Rmarkdown document in the
-    console
+    console.
 Imports: rstudioapi, rmarkdown
 License: MIT
 LazyData: TRUE
