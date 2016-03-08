@@ -1,6 +1,8 @@
 # RStudioConsoleRender
 
-This package provides a single RStudio addin command called **Render in console**. Executing it will call `rmarkdown::render(active_document_path, envir=.GlobalEnv)` in the RStudio console and then launch a viewer for the resulting rendered document. 
+A short blog post about this package: [Faster rendering in RStudio](http://jeffjjohnston.github.io/rstudio/rmarkdown/2016/03/01/faster-rendering-in-rstudio.html).
+
+This package provides a single RStudio addin command called **Render in console**. Executing it will call `rmarkdown::render(active_document_path, envir=.GlobalEnv)` in the RStudio console and then launch a viewer for the resulting rendered document.
 
 The effect is very similar to the **Code** | **Run region** | **Run all** command, except that it also renders your output document. Unlike the **Knit** button, however, it does not create a fresh environment. This has some important consequences to keep in mind.
 
@@ -11,4 +13,3 @@ Second, because rendering occurs in the console's environment, it is easy to int
 ## Installation
 
 Install the package via `devtools::install_github("jeffjjohnston/RStudioConsoleRender")`. The **Render in console** command should then appear in RStudio's **Tools** | **Addins** drop-down menu. You can assign the command a keyboard shortcut using **Tools** | **Modify Keyboard Shortcuts...**.
-
