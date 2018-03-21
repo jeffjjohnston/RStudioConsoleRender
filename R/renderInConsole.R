@@ -7,11 +7,12 @@
 #' @importFrom rmarkdown render
 #' @import rstudioapi
 renderInConsole <- function() {
-  docpath <- rstudioapi::getActiveDocumentContext()$path
-
-  if(file.exists(docpath)) {
-    setwd(dirname(docpath))
-    output_file <- rmarkdown::render(docpath, envir=.GlobalEnv)
+  doc <- rstudioapi::getSourceEditorContext()
+  
+  if(file.exists(doc$path)) {
+    rstudioapi::documentSave(doc$id)
+    setwd(dirname(doc$path))
+    output_file <- rmarkdown::render(doc$path, envir=.GlobalEnv)
     rstudioapi::viewer(output_file)
   }
 }
