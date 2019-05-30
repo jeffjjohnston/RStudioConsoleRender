@@ -10,6 +10,20 @@ First, packages loaded by your RMarkdown document will not need to be reloaded i
 
 Second, because rendering occurs in the console's environment, it is easy to introduce mistakes that you won't catch until you render in an empty environment via the **Knit** command. For example, if you load a package in your console environment but forget to load it in your RMarkdown document, the package will be available when you render via the console but not when you use the **Knit** command. I find that it is a good idea to periodically use the **Knit** command to make sure my RMarkdown document does not have any dependencies on the state of the console environment.
 
+## Viewer options
+
+By default, `RStudioConsoleRender` will call `rstudioapi::viewer()` on the rendered document. This will typically open a browser window. You can control this behavior by setting the `RStudioConsoleRender.viewer_mode` option to one of three values:
+
+   * `browser`: This is the default option and simply calls `rstudioapi::viewer()`. 
+   * `viewer_pane`: This will open the rendered document in the RStudio Viewer pane by first copying it to the RStudio session temporary directory (a requirement of the Viewer pane).
+   * `none`: No action will be performed after rendering the document when the option is set to this value.
+   
+Set the option using `options()` like this:
+
+```r
+options("RStudioConsoleRender.viewer_mode"="viewer_pane")
+```
+
 ## Installation
 
 Install the package via `devtools::install_github("jeffjjohnston/RStudioConsoleRender")`. The **Render in console** command should then appear in RStudio's **Tools** | **Addins** drop-down menu. You can assign the command a keyboard shortcut using **Tools** | **Modify Keyboard Shortcuts...**.

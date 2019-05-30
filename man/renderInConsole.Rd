@@ -9,4 +9,3 @@ renderInConsole()
 \description{
 Call this function as an addin to render the current Rmd document in the console
 }
-
