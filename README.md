@@ -1,6 +1,6 @@
 # RStudioConsoleRender
 
-A short blog post about this package: [Faster rendering in RStudio](http://jeffjjohnston.github.io/rstudio/rmarkdown/2016/03/01/faster-rendering-in-rstudio.html).
+A short blog post about this package: [Faster rendering in RStudio](https://jeffjjohnston.github.io/2016/03/01/faster-rendering-in-rstudio/).
 
 This package provides a single RStudio addin command called **Render in console**. Executing it will call `rmarkdown::render(active_document_path, envir=.GlobalEnv)` in the RStudio console and then launch a viewer for the resulting rendered document.
 
